@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block main %}
+<ul>
+  <li v-for="(item, index) in items" :key="item.id">
+    <input type="checkbox" v-model="item.done" @change="updateItem(index)">
+    <input type="text" v-model="item.content" @change="updateItem(index)" :disabled="item.done">
+    <button @click.once="deleteItem([[ item.id ]])" class="material-icons">delete_outline</button>
+  </li>
+</ul>
+
+<div id="create-form">
+  <input type="text" v-model="newContent" placeholder="Novo item" @keyup.enter="newItem">
+  <button @click="newItem" class="material-icons">add</button>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block body %}
+<header>
+  <h1><a href="{{ url_for('main.index') }}">{{ title }}</a></h1>
+</header>
+
+<main id="app">
+  {% block main %}{% endblock %}
+</main>
+
+<footer>
+  <p>available on <a href="https://github.com/umluizlima/grocery-app" target="_blank" rel="noopener">GitHub</a></p>
+</footer>
+{% endblock %}
